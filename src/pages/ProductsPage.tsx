@@ -23,13 +23,13 @@ export default function ProductsPage() {
       setError(null);
 
       try {
-        // Sin paginación en UI: pedimos un page_size grande y mostramos lo que venga
+        
         const url =
           "https://thesimpsonsapi.com/api/characters?page=1";
         const res = await fetch(url);
         const data = await res.json();
 
-        // La API suele devolver { count, next, previous, results: [] }
+       
         const list = Array.isArray(data?.results) ? data.results : Array.isArray(data) ? data : [];
         setItems(list);
       } catch (e: any) {
