@@ -1,37 +1,40 @@
-import { useMemo, useState } from "react";
-import { Paper, TextField, Typography } from "@mui/material";
+import React from 'react';
 
-export default function SumPage() {
-  const [a, setA] = useState(0);
-  const [b, setB] = useState(0);
-
-  const result = useMemo(() => a + b, [a, b]);
-
+const EstadisticasPage: React.FC = () => {
   return (
-    <Paper sx={{ p: 3, borderRadius: 3 }}>
-      <Typography variant="h5" fontWeight={900} gutterBottom>
-        Suma (a + b)
-      </Typography>
+    <div className="p-8 font-sans bg-white min-h-screen">
+      {/* Título Principal */}
+      <h1 className="text-3xl font-bold text-gray-800 mb-4">
+        Estadísticas (página actual)
+      </h1>
 
-      <TextField
-        label="A"
-        type="number"
-        value={a}
-        onChange={(e) => setA(Number(e.target.value))}
-        sx={{ mr: 2, mb: 2 }}
-      />
+      <div className="flex flex-col gap-4 w-72">
+        
+        {/* Botón: Contar por género */}
+        <button className="bg-[#007bff] hover:bg-blue-600 text-white py-2 px-4 rounded text-left transition-colors">
+          Contar por género
+        </button>
 
-      <TextField
-        label="B"
-        type="number"
-        value={b}
-        onChange={(e) => setB(Number(e.target.value))}
-        sx={{ mb: 2 }}
-      />
+        {/* Dropdown / Select */}
+        <select className="border border-gray-300 rounded p-2 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="alive">Alive</option>
+          <option value="dead">Dead</option>
+          <option value="unknown">Unknown</option>
+        </select>
 
-      <Typography sx={{ mt: 1 }}>
-        Resultado: <strong>{result}</strong>
-      </Typography>
-    </Paper>
+        {/* Botón: Porcentaje por estado */}
+        <button className="bg-[#17a2b8] hover:bg-cyan-600 text-white py-2 px-4 rounded text-left transition-colors">
+          Porcentaje por estado
+        </button>
+
+        {/* Botón: Promedio de edad */}
+        <button className="bg-[#28a745] hover:bg-green-600 text-white py-2 px-4 rounded text-left transition-colors">
+          Promedio de edad
+        </button>
+
+      </div>
+    </div>
   );
-}
+};
+
+export default EstadisticasPage;

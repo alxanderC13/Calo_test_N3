@@ -4,15 +4,15 @@ export default function HomePage() {
   return (
     <Paper sx={{ p: 3, borderRadius: 3 }}>
       <Typography variant="h4" fontWeight={900} gutterBottom>
-        Bienvenido 👋
+       Personajes de Los Simpsons
       </Typography>
 
       <Typography color="text.secondary">
-        Este proyecto usa React + React Router + Material UI.
+      Listado dinámico usando API pública + CDN estable.
       </Typography>
 
       <Typography sx={{ mt: 2 }}>
-        Usa el menú superior (oscuro) para navegar entre páginas.
+      Ejemplo ideal para practicar fetch y renderizado dinámico.
       </Typography>
     </Paper>
   );
